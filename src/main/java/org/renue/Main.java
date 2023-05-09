@@ -36,10 +36,13 @@ public class Main {
         while(true) {
             System.out.println("Введите строку с фильтрами/enter(пропустить фильтры)/!quit(выход): ");
             filtersString = scanner.nextLine();
+            if(filtersString.equals("!quit")) {
+                break;
+            }
             if(!filtersString.isEmpty()) {
                 try {
                     filtrator.parse(filtersString);
-                } catch (FilterFormatException e) {
+                } catch (FilterFormatException | NumberFormatException e) {
                     System.out.println(e);
                 }
             }
@@ -71,8 +74,9 @@ public class Main {
                         System.out.println(line[1] + " " +Arrays.toString(line));
                     }
                     System.out.printf("Количество найденных строк: %d Время затраченное на поиск: %d мс\n",filteredResult.size(), endTime - startTime);
-                } catch (IncorrectFilterQuery e) {
-                    throw new RuntimeException(e);
+                } catch (IncorrectFilterQuery | ArrayIndexOutOfBoundsException e) {
+                    System.out.println(e);
+                    continue;
                 }
             }
         }

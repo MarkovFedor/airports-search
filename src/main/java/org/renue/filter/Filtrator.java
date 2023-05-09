@@ -19,7 +19,7 @@ public class Filtrator {
         parsedTokens = new LinkedList<Token>();
     }
 
-    public void parse(String query) throws FilterFormatException {
+    public void parse(String query) throws FilterFormatException, NumberFormatException {
         int i = 0;
         char current;
         String numString;

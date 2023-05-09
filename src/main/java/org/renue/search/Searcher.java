@@ -5,8 +5,6 @@ import org.renue.config.Config;
 import java.io.*;
 import java.util.*;
 
-import static java.util.Comparator.*;
-
 public class Searcher {
     private final Config config;
     private RandomAccessFile fileReader;

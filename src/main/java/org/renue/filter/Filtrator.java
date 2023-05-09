@@ -16,10 +16,10 @@ public class Filtrator {
     private LinkedList<Token> parsedTokens;
     private Stack<Token> stack;
     public Filtrator() {
-        parsedTokens = new LinkedList<Token>();
     }
 
     public void parse(String query) throws FilterFormatException, NumberFormatException {
+        parsedTokens = new LinkedList<>();
         int i = 0;
         char current;
         String numString;
